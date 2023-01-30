@@ -1,0 +1,20 @@
+aaa_diameter=11; 
+aaa_height=42.5; 
+aa_diameter=13.5;
+aa_height=47.2;
+niche_length=30;
+cathode_diameter=4;
+
+difference(){
+cylinder(d=aa_diameter,h=aa_height,$fn=100);
+cylinder(d=aaa_diameter,h=aaa_height,$fn=100);
+translate([0,0,46]){
+cylinder(d=7.5,h=2,$fn=100);};
+translate([-(aa_diameter/2),0,(aa_height-niche_length)-5]){
+    cube(size=[aa_diameter,aa_diameter,niche_length]);}
+translate([0,0,1]){
+    cylinder(d=cathode_diameter,h=aa_height,$fn=100);}
+translate([-10,12.5,15]){
+    rotate([0,90,0]){
+        cylinder(d=25,h=20,$fn=100);}}
+};
